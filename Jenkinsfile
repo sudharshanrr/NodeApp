@@ -29,7 +29,7 @@ pipeline{
 //               withCredentials([string(credentialsId: 'dockerhubpassword', variable: 'dockerhub-password')]) {
                 sh "docker login -u sudharshanrr -p Sudha@2662"
 //               }
-              sh "docker push sudharshanrr/aa"
+              sh "docker push sudharshanrr/ddd"
             }
         }
     }
