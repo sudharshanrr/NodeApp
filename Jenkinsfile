@@ -16,7 +16,7 @@ pipeline{
     stages {
         stage('pull code') {
             steps {
-              git branch: 'main', credentialsId: 'gihubcredentialss', url: 'https://github.com/sudharshanrr/Angular13.git'
+              git branch: 'main', credentialsId: 'gihubcredentialss', url: 'https://github.com/sudharshanrr/NodeApp.git'
             }
         }
         stage('Build image') {
@@ -24,14 +24,14 @@ pipeline{
              sh "docker build -t ddd ."
           }
         }
-//         stage('Push to docker hub') {
-//             steps {
-//               withCredentials([string(credentialsId: 'dockerhubpassword', variable: 'dockerhub-password')]) {
-//                 sh "docker login -u sudharshanrr -p ${dockerhub-password}"
-//               }
-//               sh "docker push sudharshanrr/aa"
-//             }
-//         }
+        stage('Push to docker hub') {
+            steps {
+              withCredentials([string(credentialsId: 'dockerhubpassword', variable: 'dockerhub-password')]) {
+                sh "docker login -u sudharshanrr -p ${dockerhub-password}"
+              }
+              sh "docker push sudharshanrr/aa"
+            }
+        }
     }
 
 }
