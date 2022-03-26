@@ -21,7 +21,7 @@ pipeline{
         }
         stage('Build image') {
           steps {
-             sh "docker build -t ddd ."
+             sh "docker build -t sudharshanrr/ddd ."
           }
         }
         stage('Push to docker hub') {
