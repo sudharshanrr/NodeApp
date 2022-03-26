@@ -11,6 +11,9 @@
     "type": "git",
     "url": "git+https://github.com/sudharshanrr/NodeApp.git"
   },
+  "dependencies": {
+    "express": "^4.15.2"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
