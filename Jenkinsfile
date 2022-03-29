@@ -34,7 +34,7 @@ pipeline{
               
              sshagent(['devops-remoe']) {
                 sh 'ssh -o StrictHostKeyChecking=no ec2-user@65.0.55.21 uptime'
-                sh 'ssh -v ec2-user@65.0.55.21 hostname -i && touch aa.text'
+                sh 'ssh -v ec2-user@65.0.55.21 touch aa.text'
                 sh 'hostname -i'
              }
             }
