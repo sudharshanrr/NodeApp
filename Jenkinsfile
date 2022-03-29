@@ -33,7 +33,7 @@ pipeline{
               sh "docker rmi -f sudharshanrr/ddd:$Tagid"
               
              sshagent(['devops-remoe']) {
-                sh 'ssh -o StrictHostKeyChecking=no -l cloudbees 13.233.184.29 uname ec2-user'
+                sh 'ssh -o StrictHostKeyChecking=no -l cloudbees 65.0.55.21 uname -a'
              }
             }
         }
