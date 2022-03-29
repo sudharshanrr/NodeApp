@@ -33,7 +33,8 @@ pipeline{
               sh "docker rmi -f sudharshanrr/ddd:$Tagid"
               
              sshagent(['devops-remoe']) {
-                sh 'pwd'
+                sh 'ssh -o StrictHostKeyChecking=no user@hostname.com uptime'
+                sh 'ssh -v ec2-user@65.0.55.21'
              }
             }
         }
