@@ -4,7 +4,7 @@ pipeline{
         PROJECT_NAME = "Devops"
     }
     parameters {
-    string defaultValue: 'main', name: 'Branch'
+    string defaultValue: 'main', name: 'Tagid'
     choice choices: ['dev', 'qa', 'sandbox', 'prod'], name: 'Environment'
     }
     
@@ -21,7 +21,7 @@ pipeline{
         }
         stage('Build image') {
           steps {
-             sh "docker build -t sudharshanrr/ddd ."
+              sh "docker build -t sudharshanrr/ddd:$Tagid ."
           }
         }
         stage('Push to docker hub') {
