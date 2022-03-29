@@ -30,6 +30,7 @@ pipeline{
                 sh "docker login -u sudharshanrr -p Sudha@2662"
 //               }
               sh "docker push sudharshanrr/ddd:$Tagid"
+              sh "docker rmi -f sudharshanrr/ddd:$Tagid"
             }
         }
     }
